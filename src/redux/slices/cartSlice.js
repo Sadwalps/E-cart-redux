@@ -11,7 +11,7 @@ const cartSlice =createSlice({
             return state.filter((item)=>item.id != action.payload)
         },
         emptyCart:(state)=>{
-            return state =  []
+            return state = []
         }
     }
 }

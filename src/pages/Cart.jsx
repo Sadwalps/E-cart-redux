@@ -2,7 +2,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCart } from '../redux/slices/cartSlice'
+import { emptyCart, removeFromCart } from '../redux/slices/cartSlice'
 import { useNavigate } from 'react-router-dom'
 
 function Cart() {
@@ -22,7 +22,7 @@ function Cart() {
     getTotal()
   },[cartArray])
   const handleCart=()=>{
-    alert(`order placed successfully`)
+    alert(`Order placed successfully`)
     dispatch(emptyCart())
     navigate('/')
   }
@@ -62,7 +62,7 @@ function Cart() {
           <h3 className='mt-2'>Total number of Products :{cartArray?.length} </h3>
           <h3>Grand Total : ${total}</h3>
           
-          <button onClick={handleCart} className='btn text-white bg-green-500 mt-2 w-100 text-center py-2'>checkout</button>
+          <button onClick={handleCart} className='btn text-white bg-green-500 mt-2 lg:w-100 w-75 text-center py-2'>checkout</button>
         </div>
       </div>
 
